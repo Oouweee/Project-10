@@ -53,15 +53,12 @@ nextImage.addEventListener('click', function() {
   slideRight();
 });
 
-// Select all items that are not the first child
 const items = document.querySelectorAll('.item:not(:first-child)');
 
-// Options for the Intersection Observer
 const options = {
   threshold: 0.5
 }
 
-// Function to add the "slide-in" effect when elements are in view
 function addSlideIn(entries) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -70,10 +67,8 @@ function addSlideIn(entries) {
   });
 }
 
-// Create an Intersection Observer with the given options
 const observer = new IntersectionObserver(addSlideIn, options)
 
-// Observe each item in the list
 items.forEach(item => {
   observer.observe(item);
-});
+})
